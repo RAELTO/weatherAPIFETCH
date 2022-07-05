@@ -86,7 +86,7 @@
                                                     </div>
                                                     <hr>
                                                     <div class="results" v-if="Object.keys(weatherData).length > 0">
-                                                        <h5>Place: <span v-text="weatherData.name"></span></h5>
+                                                        <h5>Place: <span v-text="mapboxData[pos].place_name"></span></h5>
                                                         <h5>Lat: <span v-text="mapboxData[pos].center[1]"></span></h5>
                                                         <h5>Long: <span v-text="mapboxData[pos].center[0]"></span></h5>
                                                         <h5>Temperature: <span v-text="`${weatherData.main.temp} °C`"></span></h5>

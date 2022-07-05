@@ -20,9 +20,6 @@ var app = new Vue({
                 .then(response => response.json())
                 .then(data => this.mapboxData = data.features);
 
-            console.log(this.mapboxData);
-
-
             if (this.inpsearch.length > 0) {
                 const index = this.mapboxData.findIndex((object) => {
                     return object.place_name == this.inpsearch;
@@ -46,9 +43,6 @@ var app = new Vue({
             await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${this.mapboxData[this.pos].center[1]}&lon=${this.mapboxData[this.pos].center[0]}&units=${params.units}&lang=${params.lang}&appid=${params.appid}`)
                 .then(response => response.json())
                 .then(data => this.weatherData = data);
-
-            console.log(this.weatherData);
-            console.log(Object.keys(this.weatherData).length);
 
         },
         restart(){
